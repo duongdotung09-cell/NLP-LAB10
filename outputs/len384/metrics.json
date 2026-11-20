@@ -1,0 +1,15 @@
+{
+ "max_length": 384,
+ "stride": 128,
+ "epochs": 2,
+ "lr": 5e-05,
+ "batch_size": 16,
+ "seed": 42,
+ "n_train": 3000,
+ "n_train_features": 3030,
+ "n_test": 1000,
+ "EM": 46.7,
+ "F1": 57.500376941987284,
+ "train_time_s": 4229.037547111511,
+ "test_infer_time_s": 98.81100058555603
+}

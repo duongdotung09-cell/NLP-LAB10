@@ -1,0 +1,51 @@
+﻿python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+At line:1 char:506
++ ... tputs\log_128.txt; & $py -u qa_model.py 256 85 *> outputs\log_256.txt
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading weights:   0%|          | 0/100 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 100/100 [00:00<00:00, 12083.50it/s]
+[transformers] [1mDistilBertForQuestionAnswering LOAD REPORT[0m from: distilbert-base-uncased
+Key                     | Status     | 
+------------------------+------------+-
+vocab_transform.weight  | UNEXPECTED | 
+vocab_transform.bias    | UNEXPECTED | 
+vocab_projector.bias    | UNEXPECTED | 
+vocab_layer_norm.weight | UNEXPECTED | 
+vocab_layer_norm.bias   | UNEXPECTED | 
+qa_outputs.weight       | MISSING    | 
+qa_outputs.bias         | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your 
+downstream task.
+
+Map:   0%|          | 0/3000 [00:00<?, ? examples/s]
+Map:  33%|███▎      | 1000/3000 [00:00<00:00, 2746.63 examples/s]
+Map:  67%|██████▋   | 2000/3000 [00:00<00:00, 3391.07 examples/s]
+Map: 100%|██████████| 3000/3000 [00:01<00:00, 2901.42 examples/s]
+Map: 100%|██████████| 3000/3000 [00:01<00:00, 2846.22 examples/s]
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s]
+Map: 100%|██████████| 300/300 [00:00<00:00, 2443.62 examples/s]
+Map: 100%|██████████| 300/300 [00:00<00:00, 1949.42 examples/s]
+
+Map:   0%|          | 0/1000 [00:00<?, ? examples/s]
+Map: 100%|██████████| 1000/1000 [00:00<00:00, 2891.58 examples/s]
+Map: 100%|██████████| 1000/1000 [00:00<00:00, 2559.96 examples/s]
+max_length=256 stride=85 train_feats=3330 val_feats=352 test_feats=1131
+step 52/418 epoch 0.25 train_loss 4.8742 val_loss 3.8344 (281s)
+step 104/418 epoch 0.50 train_loss 3.6627 val_loss 3.3818 (556s)
+step 156/418 epoch 0.75 train_loss 3.1905 val_loss 2.6614 (837s)
+step 208/418 epoch 1.00 train_loss 2.7459 val_loss 2.3943 (2037s)
+step 260/418 epoch 1.24 train_loss 2.0108 val_loss 2.1977 (2309s)
+step 312/418 epoch 1.49 train_loss 1.8726 val_loss 2.1050 (2585s)
+step 364/418 epoch 1.74 train_loss 1.8710 val_loss 2.0489 (2864s)
+step 416/418 epoch 1.99 train_loss 1.8035 val_loss 2.0541 (3144s)
+step 418/418 epoch 2.00 train_loss 1.4951 val_loss 2.0542 (3174s)
+{'max_length': 256, 'stride': 85, 'epochs': 2, 'lr': 5e-05, 'batch_size': 16, 'seed': 42, 'n_train': 3000, 'n_train_features': 3330, 'n_test': 1000, 'EM': np.float64(45.2), 'F1': np.float64(56.523076016200754), 'train_time_s': 3173.833590745926, 'test_infer_time_s': 75.96937203407288}

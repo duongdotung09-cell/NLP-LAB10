@@ -1,0 +1,23 @@
+experiment,model,setting,n,EM,F1,train_time_min,train_loss,val_loss
+exp1_context_length,distilbert-base-uncased,"max_length=128,stride=42",1000,46.4,57.638,60.326,0.979,1.408
+exp1_context_length,distilbert-base-uncased,"max_length=256,stride=85",1000,45.2,56.523,52.897,1.804,2.054
+exp1_context_length,distilbert-base-uncased,"max_length=384,stride=128",1000,46.7,57.5,70.484,1.757,2.015
+exp2_exp3_em_vs_f1,Baseline (keyword overlap),test,1000,11.2,20.56,0.0,,
+exp2_exp3_em_vs_f1,Fine-tuned DistilBERT,test,1000,46.7,57.5,70.484,1.757,2.015
+exp4_lexical_overlap,Baseline,high overlap,388,15.46,28.22,,,
+exp4_lexical_overlap,Baseline,medium,264,12.5,21.33,,,
+exp4_lexical_overlap,Baseline,low overlap,348,5.46,11.43,,,
+exp4_lexical_overlap,Fine-tuned,high overlap,388,53.87,65.53,,,
+exp4_lexical_overlap,Fine-tuned,medium,264,51.89,61.14,,,
+exp4_lexical_overlap,Fine-tuned,low overlap,348,34.77,45.79,,,
+exp5_answer_length,Baseline,answer_len=1,287,16.38,22.18,,,
+exp5_answer_length,Baseline,answer_len=2-3,451,11.97,21.76,,,
+exp5_answer_length,Baseline,answer_len=4-6,168,5.95,19.11,,,
+exp5_answer_length,Baseline,answer_len=7+,94,1.06,12.43,,,
+exp5_answer_length,Fine-tuned,answer_len=1,287,51.22,57.4,,,
+exp5_answer_length,Fine-tuned,answer_len=2-3,451,52.33,62.87,,,
+exp5_answer_length,Fine-tuned,answer_len=4-6,168,38.69,54.7,,,
+exp5_answer_length,Fine-tuned,answer_len=7+,94,20.21,37.06,,,
+prediction_3_4_perturbation,Fine-tuned DistilBERT,original,300,47.33,58.56,,,
+prediction_3_4_perturbation,Fine-tuned DistilBERT,shuffle,300,44.33,57.18,,,
+prediction_3_4_perturbation,Fine-tuned DistilBERT,distractor,300,42.67,54.55,,,
