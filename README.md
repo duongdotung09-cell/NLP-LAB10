@@ -35,6 +35,8 @@ python document_qa.py             # demo; -i để hỏi tương tác, -f file.t
 
 Notebook qa_finetuning.ipynb tự gọi run_experiment nếu outputs/lenXXX chưa có kết quả, nên có thể chạy notebook trực tiếp mà không cần các lệnh train ở trên. Trên CPU mỗi cấu hình mất khoảng 1 giờ.
 
+Model đã fine-tune: file model.safetensors (254MB) vượt giới hạn 100MB của GitHub nên được lưu trên Google Drive: https://drive.google.com/file/d/1in8L7Lzq-DMgHTK4J7d0WIL1SUzG2H3G/view?usp=sharing. Tải về và đặt vào outputs/len384/model/ (cùng thư mục với config.json và tokenizer.json), sau đó chạy python document_qa.py. Nếu không tải, có thể train lại bằng python qa_model.py 384 128 1 (khoảng 1 giờ trên CPU).
+
 ## Reproducibility
 
 ```
